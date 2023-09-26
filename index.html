@@ -1,65 +1,77 @@
 <html>
     <head>
         <title>My Card</title>
-        
+        <link href="./assets/css/style.css" rel="stylesheet">        
     </head>
-    <body style="background-image: linear-gradient(white, aquamarine);">
-    <div class="Layout Container" 
-            style="
-            background-color: white;
-            margin: 100px auto;
-            width: 600px;
-            border-radius: 15px;
-            box-shadow: 0 0 15px;
-            padding: 15px 150px 100px; 
-            text-align: justify;">
-        <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"> Hi Welcome to my first project</h1>
-        <p style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; margin-bottom: 30px;">
-            On my first day of bootcamp with Dumbways.id, I learn some basic html and css inline-style to create a digital card and hosting it.
-            Also i learn how to create VCS using Git and Github then deploy it with Vercel to make it accessible for anyone who want to see my project. 
-            Thank you Mr. Dandi for your easy-to-understand teaching so that I can make this project smoothly.
-        </p>
-        <div class="Contact Button" 
-            style="
-            width: 100px;
-            height: 30px;
-            text-align: center;
-            line-height: 30px ;
-            background-color: black; 
-            border: none;
-            border-radius: 15px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            padding: auto ;">
-            <p style="color: white;">contact</p>
+    <body>
+        <!-- Start Navbar -->
+        <nav>
+            <div class="nav-left">
+                <ul>
+                    <img src="./assets/images/logo.png" alt="logo" />
+                    <li>
+                        <a href="./index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">My Project</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav-right">
+                <a href="./contact.html"> Contact Me</a>
+            </div>
+        </nav>
+        <!-- End Navbar -->
+
+        <div class="Layout-Container">
+            <div class="Left-Container">
+                <div class="upper">
+                    <h2> Hi Welcome to my first project</h2>
+                    <p>
+                        Hello everyone, someday I'm gonna be a best programmer. I know it's gonna be hard to achieve it, but i believe I can do it.
+                        For the first step i need to learn with friends who share the same interest by participating at Dumbways.id.
+                    </p>
+                </div>
+                <div class="center">
+                    <ul>
+                        <li>
+                            <p class="Contact-Button">contact</p>                            
+                        </li>
+                        <li>
+                            <div class="download-CV" >
+                                <p>download CV   
+                                    <a href="./assets/CV Nandy.txt"><img src="./assets/images/download-button.png" alt="download"></a>
+                                </p>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="Social-Media">
+                    <ul>
+                        <li>
+                            <a href="https://www.linkedin.com/in/nandy-septiana/"><img src="./assets/images/linkedin.png" alt="LinkedIn"></a>
+                        </li>
+                        <li>    
+                            <a href="https://www.instagram.com/nandy.septiana/"><img src="./assets/images/instagram.png" alt="Instagram"></a>
+                        </li>
+                        <li>    
+                            <a href="https://www.facebook.com/mythS4"><img src="./assets/images/facebook.png" alt="Facebook"></a>
+                        </li>
+                        <li>    
+                            <a href="https://twitter.com/Ndhiee95"><img src="./assets/images/twitter.png" alt="Twitter"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="Right-Container">
+                <div class="Profile">
+                    <img src="./assets/images/nandy.jpg" alt="Nandy" style="width: 100%; border-radius: 10px 10px 0 0;"/>
+                    <h2 style="margin: 0; margin: 15px 0 10px">Nandy Septiana</h2>
+                    <p style="margin: 0; margin-bottom: 15px;">Fullstack Developer</p>
+                </div>
+            </div>
         </div>
-        <div class="download CV" >
-        <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 500;">download CV   
-            <a href="./assets/CV Nandy.txt"><img src="./assets/download-button.png" alt="download" width="15px"></a>
-        </p>
-        </div>
-        <div class="Social Media"
-            style="
-            height: 100px;
-            margin: 50px auto 0;
-            text-align: center;">
-        <a href="https://www.linkedin.com/in/nandy-septiana/"><img src="./assets/linkedin.png" alt="LinkedIn" width="50px" style="margin: 0 30px;"></a>
-        <a href="https://www.instagram.com/nandy.septiana/"><img src="./assets/instagram.png" alt="Instagram" width="50px" style="margin: 0 30px;"></a>
-        <a href="https://www.facebook.com/mythS4"><img src="./assets/facebook.png" alt="Facebook" width="50px" style="margin: 0 30px;"></a>
-        <a href="https://twitter.com/Ndhiee95"><img src="./assets/twitter.png" alt="Twitter" width="50px" style="margin: 0 30px;"></a>
-        </div>
-        <div class="Profile"   
-            style="
-            text-align: center;
-            margin: 0 auto; 
-            width: 340px; 
-            padding: 0 0 15px;
-            border-radius: 15px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            box-shadow: 0 0 10px gray">
-            <img src="./assets/nandy.jpg" alt="Nandy" style="width: 100%; border-radius: 15px 15px 0 0;"/>
-            <h1 style="margin: 0; margin: 15px 0 10px">Nandy Septiana</h1>
-            <p style="margin: 0; margin-bottom: 15px;">Fullstack Developer</p>
-        </div>
-    </div>
     </body>
 </html>

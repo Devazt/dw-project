@@ -1,0 +1,172 @@
+body {
+    margin: 0;
+    background-color: rgb(226, 224, 224);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Start Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.76);
+    padding: 0 30px;
+}
+
+.nav-left ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+}
+
+.nav-left ul li {
+    margin-right: 30px;
+    font-size: 15px;
+}
+
+.nav-left img {
+    margin-right: 40px;
+    height: 30px;
+}
+
+.nav-left a {
+    text-decoration: none;
+    color: black;
+}
+.nav-left a:hover {
+    text-decoration: none;
+    color: orangered;
+}
+
+.nav-right a {
+    background-color: black;
+    padding: 4px 15px;
+    color: white;
+    text-decoration: none;
+    border-radius: 7px;
+    font-size: 15px;
+}
+/* End Navbar */
+
+/* Start Contact Page */
+form {
+    width: 500px;
+    margin: 50px auto;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 7px;
+    border: 1px solid #dbdbdb;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px gray;
+}
+
+textarea {
+    resize: none;
+    height: 150px;
+}
+
+form div {
+    margin-top: 30px;
+}
+
+form label {
+    font-weight: 700;
+}
+
+button {
+    background-color: black;
+    padding: 5px 25px;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+}
+
+form div h1 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+/* End Contact Page */
+
+/* Start Index Page */
+.Layout-Container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    margin: 100px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px;
+    padding: 50px;
+    width: 1000px;
+    height: 550px;
+}
+
+/* .Left-Container {
+    height: 100%;
+    align-content: center;
+    margin: auto;
+    padding: 0;
+} */
+
+.upper {
+    width: 85%;
+    text-align: justify;
+    margin-bottom: 50px;
+}
+
+.center ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    margin-right: 30px;
+    padding: 0;
+}
+
+.Contact-Button {
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px ;
+    background-color: black; 
+    border: none;
+    border-radius: 15px;
+    padding: auto ;
+    color: white;
+    margin-right: 30px;
+}
+
+.download-CV img {
+    width: 20px;
+    margin-left: 5px;
+}
+
+.Social-Media ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+.Social-Media img {
+    width: 50px;
+    margin: 50px 30px 0 0;
+    padding: 0;
+}
+
+.Profile {    
+    text-align: center;
+    margin: 0 auto; 
+    width: 340px; 
+    padding: 0 0 5px;
+    border-radius: 10px; 
+    box-shadow: 0 0 10px gray
+}
