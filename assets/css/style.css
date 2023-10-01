@@ -76,7 +76,7 @@ form label {
     font-weight: 700;
 }
 
-button {
+.submit {
     background-color: black;
     padding: 5px 25px;
     color: white;
@@ -163,3 +163,208 @@ form div h1 {
     border-radius: 10px; 
     box-shadow: 0 0 10px gray
 }
+/* End Index Page */
+
+/* Start My Project */
+
+.date ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tech {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+}
+
+.tech ul {
+    list-style-type: none;
+    padding: 0;
+    margin-right: 50px;
+}
+
+.project form .inputProject-group {
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    background: white;
+    border: 1px solid #dbdbdb;
+    box-shadow: 0 2px 5px gray;
+    border-radius: 8px;
+    cursor: pointer;
+    }
+
+.project form .inputProject-group label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+
+.project form .inputProject-group label {
+    font-size: 15px;
+    color: #777777;
+}
+
+.project form .inputProject-group p {
+    background: #dbdbdb;
+    border: 1px solid #dbdbdb;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 0;
+}
+/* End My Project */
+
+/* Start Project List */
+
+.title-project h1 {
+    background-color: white;
+    margin: 0;
+    padding: 50px;
+    text-align: center;
+}
+.project-list {
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0;
+    padding-bottom: 100px;
+}
+
+.project-container {
+    width: 400px;
+    border: 1px solid #dbdbdb;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px gray;
+    margin: 10px;
+    padding: 20px;
+}
+
+.project-container a {
+    text-decoration: none;
+    color: black;
+}
+
+.project-image img {
+    width: 100%;
+    border: 1px solid #dbdbdb;
+    border-radius: 8px;
+}
+
+.project-icon ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none;
+    margin: 30px 0;
+    padding: 0;
+}
+
+.project-button {
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+}
+
+.edit, .delete {
+    background-color: black;
+    margin: 0;
+    width: 150px;
+    padding: 5px 25px;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* End Project List */
+
+/* Start Project Detail */
+
+.main-container {
+    margin: 50px;
+    padding: 50px;
+    background-color: white;
+    border: 1px solid #dbdbdb;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px gray;
+}
+
+.main-container h1 {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.upper-main {
+    display: flex;
+    border: 1px solid #dbdbdb;
+    border-radius: 15px;
+}
+
+.upper-left-main img {
+    width: 500px;
+    margin-right: 50px;
+    border-start-start-radius: 15px;
+    border-end-start-radius: 15px;
+}
+
+.upper-right-main {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.duration p {
+    font-weight: bold;
+}
+
+.duration ul {
+    margin: 0;
+    padding: 0;
+}
+.duration ul li {
+    display: flex;
+    font-weight: bold;
+    list-style-type: none;
+    margin-bottom: 15px;
+    padding: 0;
+}
+
+.duration img {
+    width: 50px;
+    padding-right: 10px;
+}
+
+.project-icon p {
+    font-weight: bold;
+}
+
+.project-icon ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.project-icon ul li {
+    margin-right: 20px;
+    padding: 0;
+}
+

@@ -1,0 +1,153 @@
+<html>
+    <head>
+        <title>My Project</title>
+        <link href="./assets/css/style.css" rel="stylesheet">
+        <link href="./assets/images/logo.png" rel="icon" type="image/x-icon">
+
+        <body>
+        <!-- Start Navbar -->
+        <nav>
+            <div class="nav-left">
+                <ul>
+                    <img src="./assets/images/logo.png" alt="logo" />
+                    <li>
+                        <a href="./index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="./my-project.html">My Project</a>
+                    </li>
+                </ul>
+            </div>
+        
+            <div class="nav-right">
+                <a href="./contact.html"> Contact Me</a>
+            </div>
+        </nav>
+        <!-- End Navbar -->
+
+        <!-- Start Input -->
+        <div class="project">
+            <form onsubmit="submitData(event)">
+                <div>
+                    <h1>ADD MY PROJECT</h1>
+                </div>
+
+                <div>
+                    <label for="pName">Project Name</label>
+                    <input type="text" id="pName">
+                </div>
+
+                <div class="date">
+                    <ul>
+                        <li>
+                            <label for="sDate">Start Date</label>
+                            <input type="date" id="s-date">
+                        </li>
+                        <li>
+                            <label for="eDate">End Date</label>
+                            <input type="date" id="e-date">
+                        </li>
+                    </ul>
+                </div>
+
+                <div style="margin-bottom: 40px;">
+                    <label for="description">Description</label>
+                    <textarea id="description"></textarea>                    
+                </div>
+
+                <label>Technologies</label>
+                <div class="tech">
+                    <ul>
+                       <li>
+                           <input type="checkbox" id="tech1" value="nodeJS" name="tech" style="width: auto;">
+                           <label for="tech1">Node JS</label>
+                        </li> 
+                        <li>                        
+                            <input type="checkbox" id="tech2" value="reactJS" name="tech" style="width: auto;">
+                            <label for="tech2">React JS</label>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>                        
+                           <input type="checkbox" id="tech3" value="nextJS" name="tech" style="width: auto;">
+                           <label for="tech3">Next JS</label>                        
+                       </li>
+                       <li>
+                           <input type="checkbox" id="tech4" value="typeScript" name="tech" style="width: auto;">
+                           <label for="tech4">TypeScript</label>
+                       </li> 
+                    </ul>
+                </div>
+
+                <div>
+                    <label>Upload Image</label>
+                    <div class="inputProject-group">
+                    <label for="attachFile">
+                        <p>Attach File</p>
+                        <img src="./assets/images/attach-file.png" alt="file" width="20px">
+                    </label>
+                    <input type="file" id="attachFile" hidden="">
+                    </div>
+                </div>
+
+                <div>
+                    <button type="submit" class="submit">Post Project</button>
+                </div>
+            </form>
+        </div>
+        <!-- End Input -->
+
+        <!-- Start Project List -->
+        <div class="title-project">
+            <h1>MY PROJECT</h1>
+        </div>
+        <div class="project-list" id="project-li">
+            <div class="project-container" id="project-item">
+                <a href="./project-details.html">
+                <div class="project-image">
+                    <img src="./assets/images/project.webp">
+                </div>
+                <p style="font-weight: bold;">Dumbways Mobile App 2023</p>
+                <p style="font-size: 15px; color: gray;">Duration : 3 Months</p>
+
+                <div class="project-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Mauris mattis cursus tellus a sodales. Aliquam mauris massa, 
+                        fermentum ac ornare id, laoreet vitae sem. Aenean sit amet eleifend tortor. 
+                        Maecenas vel turpis orci. Duis faucibus, erat sed fermentum aliquet,
+                         nisi ligula ornare purus, sit amet finibus felis ipsum viverra mi. 
+                         Aliquam dapibus eros ac orci faucibus malesuada. Pellentesque
+                          habitant morbi tristique senectus et netus et malesuada fames ac 
+                          turpis egestas
+                    </p>
+                </div>
+
+                <div class="project-icon">                    
+                    <ul>
+                        <li>
+                            <img src="./assets/images/nodejs.png"> 
+                        </li>
+                        <li>
+                            <img src="./assets/images/reactjs.png">
+                        </li>
+                        <li>
+                            <img src="./assets/images/nextjs.png">
+                        </li>
+                        <li>
+                            <img src="./assets/images/typescript.png">
+                        </li>
+                    </ul>
+                </div>
+                <div class="project-button">
+                    <button class="edit" type="button">Edit</button>
+                    <button class="delete" type="button">Delete</button>
+                </div>
+                </a>
+            </div>
+            
+        </div>
+
+        </body>
+    </head>
+    <script src="./assets/js/project.js"></script>
+</html>
