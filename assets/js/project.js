@@ -1,5 +1,4 @@
-// buat variable untuk menampung data 
-const data = []
+const data = [];
 
 function submitData(event) {
   event.preventDefault();
@@ -8,20 +7,48 @@ function submitData(event) {
   let s_date = document.getElementById("s-date").value
   let e_date = document.getElementById("e-date").value
   let content = document.getElementById("description").value
+  let isUsingNodeJs = document.getElementById("tech1").checked
+  let isUsingReactJs = document.getElementById("tech2").checked
+  let isUsingNextJs = document.getElementById("tech3").checked
+  let isUsingTypescript = document.getElementById("tech4").checked
   let image = document.getElementById("attachFile").files
-    // untuk menampung value yang sudah di centang
-  let techCheck = document.querySelectorAll(`input[name="tech"]:checked`)
-  let tech = Array.from(techCheck).map(checkbox => checkbox.value)
 
+  
+  // Validation
+  if (title === "") {
+    alert("Project name must be filled");
+    return;
+  }
+  else if (s_date === "") {
+    alert("Start date must be filled");
+    return;
+  }
+  else if (e_date === "") {
+    alert("End date must be filled");
+    return;
+  }
+  else if (content === "") {
+    alert("Description must be filled");
+    return;
+  } 
+  else if (image.length === 0) {
+    alert("Must upload a picture");
+    return;
+  }
+  
+  //display image
   image = URL.createObjectURL(image[0])
 
   const obj = {
-    image,
     title,
     s_date,
     e_date,
+    image,
     content,
-    tech,
+    isUsingNodeJs,
+    isUsingReactJs,
+    isUsingNextJs,
+    isUsingTypescript,
   }
 
   data.push(obj)
@@ -32,20 +59,6 @@ function submitData(event) {
 function renderProject() {
   document.getElementById("project-li").innerHTML = ""
   for (let i = 0; i < data.length; i++) {
-
-    // looping icon technologies
-    let techImages = ""
-    for (let j = 0; j < data[i].tech.length; j++) {
-      if (data[i].tech[j] === "nodeJS") {
-        techImages += '<li><img src="./assets/images/nodejs.png"></li>'
-      } else if (data[i].tech[j] === "reactJS") {
-        techImages += '<li><img src="./assets/images/reactjs.png"></li>'
-      } else if (data[i].tech[j] === "nextJS") {
-        techImages += '<li><img src="./assets/images/nextjs.png"></li>'
-      } else if (data[i].tech[j] === "typeScript") {
-        techImages += '<li><img src="./assets/images/typescript.png"></li>'
-      }
-    }
 
     // post content
     document.getElementById("project-li").innerHTML += `
@@ -65,7 +78,7 @@ function renderProject() {
 
                <div class="project-icon">                                           
                     <ul>
-                        ${techImages}
+                        ${renderTechImages(data[i])}
                     </ul>
                 </div>
                 <div class="project-button">
@@ -75,4 +88,24 @@ function renderProject() {
                 </a>
             </div>`
   }
+}
+
+//render tech images
+function renderTechImages(Object) {
+  let renderImages = "";
+
+  if (Object.isUsingNodeJs) {
+      renderImages += `<li><img src="./assets/images/nodejs.png" alt="node-js"></li>`;
+  }
+  if (Object.isUsingReactJs) {
+      renderImages += `<li><img src="./assets/images/reactjs.png" alt="node-js"></li>`;
+  }
+  if (Object.isUsingNextJs) {
+      renderImages += `<li><img src="./assets/images/nextjs.png" alt="next-js"></li>`;
+  }
+  if (Object.isUsingTypescript) {
+      renderImages += `<li><img src="./assets/images/typescript.png" alt="typescript"></li>`;
+  }
+
+  return renderImages;
 }
