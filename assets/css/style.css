@@ -126,7 +126,6 @@ form div h1 {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 0 10px;
-    max-width: 1536px;
     margin: 2rem;
     padding: 2rem;
 }
@@ -393,68 +392,8 @@ form div h1 {
     padding: 0;
 }
 
-/* 2xl */
-@media only screen and (max-width: 1536px) {
-    /* index */
-    .Layout-Container {
-        max-width: 1280px;
-    }
-
-    /* contact */
-    .contact-form {
-        max-width: 1280px;
-    }
-
-    /* my project */
-    .project-form {
-        max-width: 1280px;
-    }
-    .project-section {
-        max-width: 1280px;
-    }
-}
-
-/* xl */
-@media only screen and (max-width: 1280px) {
-    /* index */
-    .Layout-Container {
-        max-width: 1024px;
-    }
-
-    /* contact */
-    .contact-form {
-        max-width: 1024px;
-    }
-
-    /* my project */
-    .project-form {
-        max-width: 1024px;
-    }
-    .project-section {
-        max-width: 1024px;
-    }
-}
-
 /* lg */
 @media only screen and (max-width: 1024px) {
-    /* index */
-    .Layout-Container {
-        max-width: 768px;
-    }
-
-    /* contact */
-    .contact-form {
-        max-width: 768px;
-    }
-
-    /* my project */
-    .project-form {
-        max-width: 768px;
-    }
-    .project-section {
-        max-width: 768px;
-    }
-
     /* project detail */
     .upper-main {
         flex-direction: column;
@@ -466,7 +405,9 @@ form div h1 {
     }
 
     .upper-left-main img {
-        border-radius: 15px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        border-bottom-left-radius: 0;
         margin: 0;
         width: 100%;
     }
@@ -476,7 +417,6 @@ form div h1 {
 @media only screen and (max-width: 768px) {
     /* index */
     .Layout-Container {
-        max-width: 640px;
         flex-direction: column;
     }
     .Social-Media ul {
@@ -498,60 +438,4 @@ form div h1 {
         cursor: pointer;
         color: #000000;
     }
-
-    /* contact */
-    .contact-form {
-        max-width: 640px;
-    }
-
-    /* my project */
-    .project-form {
-        max-width: 640px;
-    }
-    .project-section {
-        max-width: 640px;
-    }
 }
-
-/* sm */
-@media only screen and (max-width: 640px) {
-    /* index */
-    .Layout-Container {
-        max-width: 475px;
-    }
-
-    /* contact */
-    .contact-form {
-        max-width: 475px;
-    }
-
-    /* my project */
-    .project-form {
-        max-width: 475px;
-    }
-    .project-section {
-        max-width: 475px;
-    }
-}
-
-/* xs */
-@media only screen and (max-width: 475px) {
-    /* index */
-    .Layout-Container {
-        width: 100%;
-    }
-
-    /* contact */
-    .contact-form {
-        width: 100%;
-    }
-
-    /* my project */
-    .project-form {
-        max-width: 100%;
-    }
-    .project-section {
-        max-width: 100% ;
-    }
-}
-
