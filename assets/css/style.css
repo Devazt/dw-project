@@ -72,21 +72,22 @@ nav {
 /* End Navbar */
 
 /* Start Contact Page */
-form {
+.contact-form {
     width: 500px;
     margin: 50px auto;
 }
 
-input, select, textarea {
+.contact-form select,.contact-form textarea, .contact-form input {
     width: 100%;
     padding: 15px;
     border-radius: 7px;
     border: 1px solid #dbdbdb;
     margin-top: 10px;
     box-shadow: 0 2px 5px gray;
+    box-sizing: border-box;
 }
 
-textarea {
+.contact-form textarea {
     resize: none;
     height: 150px;
 }
@@ -138,9 +139,8 @@ form div h1 {
 
 .center ul {
     display: flex;
-    align-items: center;
+    justify-content: start;
     list-style-type: none;
-    margin-right: 30px;
     padding: 0;
 }
 
@@ -191,9 +191,29 @@ form div h1 {
 
 /* Start My Project */
 
+.project-form {
+    width: 500px;
+    margin: 50px auto;
+}
+
+.project-form input, .project-form textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 7px;
+    border: 1px solid #dbdbdb;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px gray;
+    box-sizing: border-box;
+}
+
+.project-form textarea {
+    resize: none;
+    height: 150px;
+}
+
 .date ul {
     display: flex;
-    align-items: center;
+    align-content: center;
     justify-content: space-between;
     list-style-type: none;
     margin: 0;
@@ -395,6 +415,10 @@ form div h1 {
 /* lg */
 @media only screen and (max-width: 1024px) {
     /* project detail */
+    .main-container{
+        width: 50%;
+        margin: 50px auto;
+    }
     .upper-main {
         flex-direction: column;
         align-items: start;
@@ -418,6 +442,7 @@ form div h1 {
     /* index */
     .Layout-Container {
         flex-direction: column;
+        justify-items: center;
     }
     .Social-Media ul {
         justify-content: space-evenly;
@@ -438,4 +463,53 @@ form div h1 {
         cursor: pointer;
         color: #000000;
     }
+    .Left-Container {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .upper, .center {
+        text-align: center;
+    }
+}
+
+/* Mobile M */
+@media only screen and (max-width: 425px) {
+    /* index */
+    .Layout-Container {
+        font-size: 0.8rem;
+    }
+    .Social-Media img {
+        width: 80%;
+    }
+    .Profile {
+        width: 80%;
+    }
+
+    /* My Project */
+    .project-form {
+        width: 80%;
+    }
+
+    .project-form, .project-list, .title-project {
+        font-size: 0.8rem;
+    }
+
+    /* contact */
+    .contact-form {
+        font-size: 0.8rem;
+        width: 80%;
+    }
+
+    /* project-detail */
+    .main-container {
+        font-size: 0.8rem;
+        width: 80%;
+        margin: 0px auto;
+        padding: 0px 10px;
+        margin-top: 50px;
+    }
+    
+
+
 }
