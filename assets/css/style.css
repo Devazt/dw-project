@@ -46,6 +46,29 @@ nav {
     border-radius: 7px;
     font-size: 15px;
 }
+
+.burger-nav {
+    display: none;
+}
+
+.burger-container {
+    display: none;
+}
+
+.burger-container a {
+    text-decoration: none;
+    background-color: #3d3d3d;
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+}
+
+.burger-container .burger-active {
+    background-color: orangered;
+}
 /* End Navbar */
 
 /* Start Contact Page */
@@ -101,12 +124,11 @@ form div h1 {
     justify-content: space-between;
     align-items: center;
     background-color: white;
-    margin: 100px auto;
     border-radius: 10px;
     box-shadow: 0 0 10px;
-    padding: 50px;
-    width: 1000px;
-    height: 550px;
+    max-width: 1536px;
+    margin: 2rem;
+    padding: 2rem;
 }
 
 .upper {
@@ -143,15 +165,18 @@ form div h1 {
 
 .Social-Media ul {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
     list-style-type: none;
     padding: 0;
 }
 
+.Social-Media ul li {
+    padding: 0 10px;
+}
+
 .Social-Media img {
     width: 50px;
-    margin: 50px 30px 0 0;
+    margin: 0;
     padding: 0;
 }
 
@@ -236,7 +261,7 @@ form div h1 {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: start;
+    justify-content: center;
     margin: 0;
     padding-bottom: 100px;
 }
@@ -366,5 +391,167 @@ form div h1 {
 .project-icon ul li {
     margin-right: 20px;
     padding: 0;
+}
+
+/* 2xl */
+@media only screen and (max-width: 1536px) {
+    /* index */
+    .Layout-Container {
+        max-width: 1280px;
+    }
+
+    /* contact */
+    .contact-form {
+        max-width: 1280px;
+    }
+
+    /* my project */
+    .project-form {
+        max-width: 1280px;
+    }
+    .project-section {
+        max-width: 1280px;
+    }
+}
+
+/* xl */
+@media only screen and (max-width: 1280px) {
+    /* index */
+    .Layout-Container {
+        max-width: 1024px;
+    }
+
+    /* contact */
+    .contact-form {
+        max-width: 1024px;
+    }
+
+    /* my project */
+    .project-form {
+        max-width: 1024px;
+    }
+    .project-section {
+        max-width: 1024px;
+    }
+}
+
+/* lg */
+@media only screen and (max-width: 1024px) {
+    /* index */
+    .Layout-Container {
+        max-width: 768px;
+    }
+
+    /* contact */
+    .contact-form {
+        max-width: 768px;
+    }
+
+    /* my project */
+    .project-form {
+        max-width: 768px;
+    }
+    .project-section {
+        max-width: 768px;
+    }
+
+    /* project detail */
+    .upper-main {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .upper-right-main {
+        margin: 1.5rem;
+    }
+
+    .upper-left-main img {
+        border-radius: 15px;
+        margin: 0;
+        width: 100%;
+    }
+}
+
+/* md */
+@media only screen and (max-width: 768px) {
+    /* index */
+    .Layout-Container {
+        max-width: 640px;
+        flex-direction: column;
+    }
+    .Social-Media ul {
+        justify-content: space-evenly;
+        
+    }
+    .burger-nav {
+        display:block ;
+    }
+    .nav-right {
+        display: none;
+    }
+    .item-collapse {
+        display: none;
+    }
+    .burger-button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        color: #000000;
+    }
+
+    /* contact */
+    .contact-form {
+        max-width: 640px;
+    }
+
+    /* my project */
+    .project-form {
+        max-width: 640px;
+    }
+    .project-section {
+        max-width: 640px;
+    }
+}
+
+/* sm */
+@media only screen and (max-width: 640px) {
+    /* index */
+    .Layout-Container {
+        max-width: 475px;
+    }
+
+    /* contact */
+    .contact-form {
+        max-width: 475px;
+    }
+
+    /* my project */
+    .project-form {
+        max-width: 475px;
+    }
+    .project-section {
+        max-width: 475px;
+    }
+}
+
+/* xs */
+@media only screen and (max-width: 475px) {
+    /* index */
+    .Layout-Container {
+        width: 100%;
+    }
+
+    /* contact */
+    .contact-form {
+        width: 100%;
+    }
+
+    /* my project */
+    .project-form {
+        max-width: 100%;
+    }
+    .project-section {
+        max-width: 100% ;
+    }
 }
 
