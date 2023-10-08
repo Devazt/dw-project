@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Testimonial</title>
+        <link href="./assets/css/style.css" rel="stylesheet">
+        <link href="./assets/images/logo.png" rel="icon" type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+    </head>
+    <body>
+        <!-- Start Navbar -->
+        <nav>
+            <div class="nav-left">
+                <ul>
+                    <img src="./assets/images/logo.png" alt="logo" />
+                    <li>
+                        <a class="item-collapse" href="./index.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="item-collapse" href="./my-project.html">My Project</a>
+                    </li>
+                    <li>
+                        <a class="item-collapse" href="./testimonial.html" id="nav-active">Testimonial</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav-right">
+                <a href="./contact.html"> Contact Me</a>
+            </div>
+        <!-- Hamburger Nav -->
+
+            <div class="burger-nav">
+                <button class="burger-button" onclick="openBurger()">
+                    <img src="./assets/images/burger-bar.png" width="30px">
+                </button>
+            </div>
+        </nav>
+        <div class="burger-container" id="burger-container">
+            <a href="./index.html">Home</a>
+            <a href="./my-project.html">My Project</a>
+            <a href="./contact.html">Contact Me</a>
+            <a href="./testimonial.html" class="burger-active">Testimonial</a>
+        </div>
+        <!-- End Navbar -->
+
+        <!-- Start Testimonial -->
+        <div class="testi-container">
+            <h1>My Testimonials</h1>
+            <div class="container-rating">
+                <h2> Rating By Star</h2>
+                <div class="rating">
+                    <button class="rating-btn" onclick="showTestimonial()">
+                        All
+                    </button>
+                    <button class="rating-btn" onclick="filterTesti(1)">
+                        1 <img src="./assets/images/star.png" width="15px">
+                    </button>
+                    <button class="rating-btn" onclick="filterTesti(2)">
+                        2 <img src="./assets/images/star.png" width="15px">
+                    </button>
+                    <button class="rating-btn" onclick="filterTesti(3)">
+                        3 <img src="./assets/images/star.png" width="15px">
+                    </button>
+                    <button class="rating-btn" onclick="filterTesti(4)">
+                        4 <img src="./assets/images/star.png" width="15px">
+                    </button>
+                    <button class="rating-btn" onclick="filterTesti(5)">
+                        5 <img src="./assets/images/star.png" width="15px">
+                    </button>
+                </div>
+            </div>
+            <section class="testimonials" id="testimonials">
+                
+                <div class="testimonial">
+                    <img src="./assets/images/person1.jpg" class="profile-testimonial" />
+                    <p class="quote">"Etiam nec tincidunt erat. Sed faucibus convallis lectus vel porttitor. Fusce
+                        tristique dolor quis odio rhoncus laoreet."</p>
+                    <p class="author">- Beardy Jack</p>
+                    <p class="rating-pt">5 <img src="./assets/images/star.png" width="15px"></p>
+                </div>
+            </section>
+        </div>
+    </body>
+    <script src="./assets/js/testimonial.js"></script>
+    <script src="./assets/js/button.js"></script>
+</html>
