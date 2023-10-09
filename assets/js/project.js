@@ -147,7 +147,7 @@ function durationInMonth(days) {
     monthDuration ++;
   }
   else if (daysDuration <= 20 && daysDuration > 10) {
-    monthDuration =+ 0.5;
+    monthDuration += 0.5;
   }
 
   return `${monthDuration} Months`
