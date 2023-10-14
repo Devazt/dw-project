@@ -1,7 +1,7 @@
 let isOpen = false
 
 function openBurger() {
-    let burgerNav = document.getElementById("burger-container")
+    let burgerNav = document.getElementById("mobile-menu")
     if(!isOpen) {
         burgerNav.style.display= "block";
     isOpen = true
