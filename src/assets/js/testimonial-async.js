@@ -31,11 +31,11 @@ async function showTestimonial() {
 
     response.forEach(item => {
         testiForHtml += `
-        <div class="testimonial">
-            <img src=${item.image} class="profile-testimonial" />
-            <p class="quote">"${item.comment}"</p>
-            <p class="author">- ${item.name}</p>
-            <p class="rating-pt">${item.rating} <img src="./assets/images/star.png" width="15px"></p>
+        <div class="container max-w-sm m-8 p-4 rounded-lg shadow-md shadow-black bg-white">
+            <img src=${item.image} class="rounded-lg mx-auto" style="width:100%; height: 200px; object-fit: cover;"/>
+            <p class="text-md font-semibold mt-4">"${item.comment}"</p>
+            <p class="text-md font-semibold text-right mt-4">- ${item.name}</p>
+            <p class="text-md font-semibold flex justify-end mt-4">${item.rating} <img src="/images/star.png" width="25px"></p>
         </div>`
     })
 
@@ -58,16 +58,16 @@ async function filterTesti(rating) {
         const dataFilter = response.filter(data => data.rating === rating)
 
     if(dataFilter.length === 0) {
-        testiForHtml = `<h3>Data not found!</h3>`
+        testiForHtml = `<p class="text-xl font-bold mt-20">Data not found!</p>`
     } else {
         dataFilter.forEach(item => {
             testiForHtml += `
-            <div class="testimonial">
-                <img src=${item.image} class="profile-testimonial" />
-                <p class="quote">"${item.comment}"</p>
-                <p class="author">- ${item.name}</p>
-                <p class="rating-pt">${item.rating} <img src="./assets/images/star.png" width="15px"></p>
-            </div>`
+            <div class="container max-w-sm m-8 p-4 rounded-lg shadow-md shadow-black bg-white">
+            <img src=${item.image} class="rounded-lg mx-auto" style="width:100%; height: 200px; object-fit: cover;"/>
+            <p class="text-md font-semibold mt-4">"${item.comment}"</p>
+            <p class="text-md font-semibold text-right mt-4">- ${item.name}</p>
+            <p class="text-md font-semibold flex justify-end mt-4">${item.rating} <img src="/images/star.png" width="25px"></p>
+        </div>`
         })
     }
     document.getElementById("testimonials").innerHTML = testiForHtml

@@ -1,26 +1,63 @@
 [
-    {
-      "title": "Ini adalah blog pertama",
-      "start_date": "10-12-2023",
-      "end_date": "10-30-2023",
-      "description": "Ketimpangan sumber daya manusia (SDM) di sektor digital masih menjadi isu yang belum terpecahkan. Berdasarkan penelitian ManpowerGroup, ketimpangan SDM global, termasuk Indonesia, meningkat dua kali lipat dalam satu dekade terakhir. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam, molestiae numquam! Deleniti maiores expedita eaque deserunt quaerat! Dicta, eligendi debitis?"
-    },
-    {     
-      "title": "Ini adalah blog kedua",
-      "start_date": "10-12-2023",
-      "end_date": "10-30-2023",
-      "description": "Ketimpangan sumber daya manusia (SDM) di sektor digital masih menjadi isu yang belum terpecahkan. Berdasarkan penelitian ManpowerGroup, ketimpangan SDM global, termasuk Indonesia, meningkat dua kali lipat dalam satu dekade terakhir. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam, molestiae numquam! Deleniti maiores expedita eaque deserunt quaerat! Dicta, eligendi debitis?"
-    },
-    {
-      "title": "Ini adalah blog ketiga",
-      "start_date": "10-12-2023",
-      "end_date": "10-30-2023",
-      "description": "Ketimpangan sumber daya manusia (SDM) di sektor digital masih menjadi isu yang belum terpecahkan. Berdasarkan penelitian ManpowerGroup, ketimpangan SDM global, termasuk Indonesia, meningkat dua kali lipat dalam satu dekade terakhir. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam, molestiae numquam! Deleniti maiores expedita eaque deserunt quaerat! Dicta, eligendi debitis?"
-    },
-    {
-      "title": "Ini adalah blog keempat",
-      "start_date": "10-12-2023",
-      "end_date": "10-30-2023",
-      "description": "Ketimpangan sumber daya manusia (SDM) di sektor digital masih menjadi isu yang belum terpecahkan. Berdasarkan penelitian ManpowerGroup, ketimpangan SDM global, termasuk Indonesia, meningkat dua kali lipat dalam satu dekade terakhir. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam, molestiae numquam! Deleniti maiores expedita eaque deserunt quaerat! Dicta, eligendi debitis?"
-    }
-  ]
+  {
+    "id": 1,
+    "title": "Proyek Pertama",
+    "start_date": "2023-10-18",
+    "end_date": "2023-10-25",
+    "description": "Ini adalah deskripsi proyek pertama.",
+    "technologies": [
+      "Node Js",
+      "React Js"
+    ],
+    "image": "image1.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Proyek Kedua",
+    "start_date": "2023-10-20",
+    "end_date": "2023-10-30",
+    "description": "Ini adalah deskripsi proyek kedua.",
+    "technologies": [
+      "Next Js",
+      "Typescript"
+    ],
+    "image": "image2.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Proyek Ketiga",
+    "start_date": "2023-10-18",
+    "end_date": "2023-10-27",
+    "description": "Ini adalah deskripsi proyek ketiga.",
+    "technologies": [
+      "Node Js",
+      "Typescript"
+    ],
+    "image": "person3.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Tes Project",
+    "start_date": "2023-10-11",
+    "end_date": "2023-10-31",
+    "description": "Sdasdad",
+    "technologies": [
+      "Node Js",
+      "React Js",
+      "Next Js",
+      "Typescript"
+    ],
+    "image": "1697649029981-WhatsApp Image 2023-09-25 at 12.56.28.jpeg"
+  },
+  {
+    "id": 5,
+    "title": "Ini adalah project pertama saya",
+    "start_date": "2023-10-19",
+    "end_date": "2023-10-20",
+    "description": "asdasds",
+    "technologies": [
+      "Node Js"
+    ],
+    "image": "1697703448992-in-process.png"
+  }
+]
