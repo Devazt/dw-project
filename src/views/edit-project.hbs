@@ -74,7 +74,7 @@
 
         <!-- Start Input -->
         <section class="bg-stone-300 h-full flex justify-center">
-            <form method="post" action="/project/{{project.id}}/edit" class="bg-white m-10 p-10 rounded-lg  shadow shadow-black container max-w-3xl">
+            <form method="post" action="/project/{{project.id}}/update" class="bg-white m-10 p-10 rounded-lg  shadow shadow-black container max-w-3xl">
                 <div class="space-y-12">
                 <div class="border-b border-gray-900/10 pb-12">
                     <h2 class="text-4xl font-bold leading-7 text-gray-900 text-center">EDIT PROJECT</h2>
@@ -120,8 +120,7 @@
                         
                         <div class="relative flex gap-x-3 col-span-3">
                             <div class="flex h-6 items-center">
-                            <input name="technologies" id="node_js" type="checkbox" value="Node Js"
-                            {{#if project.technologies}} {{#if (jsInclude project.technologies "Node Js")}}checked{{/if}} {{/if}} class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                            <input name="node_js" id="node_js" type="checkbox" value="node_js" {{#if project.node_js}}checked{{else}}{{/if}} class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                             </div>
                             <div class="text-sm leading-6">
                             <label for="node_js" class="font-medium text-gray-900">Node JS</label>
@@ -130,8 +129,7 @@
                         </div>
                         <div class="relative flex gap-x-3 col-span-3">
                             <div class="flex h-6 items-center">
-                            <input name="technologies" id="react_js" type="checkbox" value="React Js"
-                            {{#if project.technologies}} {{#if (jsInclude project.technologies "React Js")}}checked{{/if}} {{/if}} class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                            <input name="react_js" id="react_js" type="checkbox" value="React Js" {{#if project.react_js}}checked{{else}}{{/if}} class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                             </div>
                             <div class="text-sm leading-6">
                             <label for="react_js" class="font-medium text-gray-900">React JS</label>
@@ -140,8 +138,7 @@
                         </div>
                         <div class="relative flex gap-x-3">
                             <div class="flex h-6 items-center">
-                            <input name="technologies" id="next_js" type="checkbox" value="Next Js"
-                            {{#if project.technologies}} {{#if (jsInclude project.technologies "Next Js")}}checked{{/if}} {{/if}} class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                            <input name="next_js" id="next_js" type="checkbox" value="Next Js" {{#if project.next_js}}checked{{else}}{{/if}} class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                             </div>
                             <div class="text-sm leading-6">
                             <label for="next_js" class="font-medium text-gray-900">Next JS</label>
@@ -150,8 +147,7 @@
                         </div>
                         <div class="relative flex gap-x-3">
                             <div class="flex h-6 items-center">
-                            <input name="technologies" id="typescript" type="checkbox" value="Typescript"
-                            {{#if project.technologies}} {{#if (jsInclude project.technologies "Typescript")}}checked{{/if}} {{/if}} class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                            <input name="typescript" id="typescript" type="checkbox" value="Typescript" {{#if project.typescript}}checked{{else}}{{/if}} class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                             </div>
                             <div class="text-sm leading-6">
                             <label for="typescript" class="font-medium text-gray-900">TypeScript</label>
@@ -164,11 +160,11 @@
                         <label for="cover-photo" class="block text-sm font-medium leading-6 text-gray-900">Cover photo</label>
                         <div class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
                         <div class="text-center">
-                            <img id="image-preview" src="{{project.imagePath}}" alt="" style="max-height: 200px; object-fit: cover;">
-                            <div class="mt-4 flex text-sm leading-6 text-gray-600">
+                            <img id="image-preview" src="{{project.image}}" alt="" style="max-height: 200px; object-fit: cover;">
+                            <div class="mt-4 flex justify-center text-sm leading-6 text-gray-600">
                             <label for="image" class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
                                 <span>Upload a file</span>
-                                <input id="image" name="image" type="file" class="sr-only">
+                                <input id="image" name="image" type="file" accept="image/*" value="{{project.image}}" class="sr-only">
                             </label>
                             </div>
                             <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 2MB</p>

@@ -4,6 +4,7 @@ const path = require('path');
 const app = express();
 const port = 5000;
 const mockDataPath = path.join(__dirname,'./src/mocks/blogs.json');
+const moment = require('moment')
 
 // Sequelize config
 const config = require('./src/config/config.json')
@@ -63,12 +64,13 @@ app.get('/contact', contact)
 // render route 
 async function home(req, res) {
     try {
-        const query = `SELECT id, title, start_date, end_date, technologies, description, image, "createdAt" FROM tb_projects`
+        const query = `SELECT * FROM tb_projects`
         let obj = await sequelize.query(query, { type: QueryTypes.SELECT });
 
         const projects = obj.map((res) => ({
             ...res,
-            author: "Nandy Septiana"
+            author: "Nandy Septiana",
+            createdAt: moment(res).format("dddd, DD MMMM YYYY")
         }))
         projects.forEach(project => {
                 const duration = calculateDuration(project.start_date, project.end_date);
@@ -78,92 +80,113 @@ async function home(req, res) {
         res.render('index', { projects });
     } catch (error) {
         console.log(error);
-
     }
-    // const projects = JSON.parse(fs.readFileSync(mockDataPath, 'utf-8'));
-    // projects.forEach(project => {
-    //     const duration = calculateDuration(project.start_date, project.end_date);
-    //     project.duration = duration;
-    //     project.imagePath = path.join('/', imageDirectory, project.image);
-    //   });
-
 }
 
 function addproject(req, res) {
     res.render('add-project')
 }
 
-function postproject(req, res) {
-    // get the form data
-    const { title, start_date, end_date, description, technologies } = req.body
-    const image = req.file.filename // image name saved on server
-    const newProject = {
-        id: generateProjectId(), // create function for generate unique ID
-        title,
-        start_date,
-        end_date,
-        description,
-        technologies: Array.isArray(technologies) ? technologies : [technologies],
-        image,
-    };
+async function postproject(req, res) {
+    try {
+        const { title, start_date, end_date, description, node_js, react_js, next_js, typescript } = req.body
+        const image = req.file.filename // image name saved on server
+        const nodejs = node_js? true:false;
+        const reactjs = react_js? true:false;
+        const nextjs = next_js? true:false;
+        const tscript = typescript? true:false;
 
-    //save the project to mock data
-    const projects = JSON.parse(fs.readFileSync(mockDataPath, 'utf-8'));
-    projects.push(newProject);
-    console.log(newProject);
+        await sequelize.query(`INSERT INTO tb_projects (title, start_date, end_date, description, node_js, react_js, next_js, typescript, image, "createdAt", "updatedAt") VALUES ('${title}', '${start_date}', '${end_date}', '${description}', '${nodejs}', '${reactjs}', '${nextjs}', '${tscript}','${image}', NOW(), NOW())`)
 
-    // save the updated mock data
-    fs.writeFileSync(mockDataPath, JSON.stringify(projects, null, 2));
-
-    // redirect to homepage
-    res.redirect('/');
+        res.redirect('/');
+    } catch (error) {
+        console.log(error);
+    }
 }
 
-function projectdetail(req, res) {
-    const projectId = parseInt(req.params.id);
-    const projects = JSON.parse(fs.readFileSync(mockDataPath, 'utf-8'));
-    const project = projects.find(p => p.id === projectId);
-
-    const duration = calculateDuration(project.start_date, project.end_date);
-    project.duration = duration;
-
-    res.render('project-details', { project });
+async function projectdetail(req, res) {
+    try {
+        const { id } = req.params
+        const query = `SELECT * FROM tb_projects WHERE id=${id}`
+        const obj = await sequelize.query(query, {type: QueryTypes.SELECT });
+        const projects = obj.map((res) => ({
+            ...res,
+            author: "Nandy Septiana",
+            start_date: moment(res.start_date).format("dddd, DD MMMM YYYY"),
+            end_date: moment(res.end_date).format("dddd, DD MMMM YYYY")
+        }));
+        projects.map(project => {
+            const duration = calculateDuration(project.start_date, project.end_date);
+            project.duration = duration;
+          });
+        
+        res.render('project-details', { projects: projects[0] });
+    }catch (error) {
+        console.log(error);
+    }
 };
 
-function editproject(req, res) {
-    const projectId = parseInt(req.params.id);
-    const projects = JSON.parse(fs.readFileSync(mockDataPath, 'utf-8'));
-    const project = projects.find(p => p.id === projectId);    
+async function editproject(req, res) {
+    try {
+        const { id } = req.params;
+        const query = `SELECT * FROM tb_projects WHERE id=${id}`;
+        const projects = await sequelize.query(query, {type: QueryTypes.SELECT});
+        const project = projects.map((res) => {
+            return {
+                ...res,
+                start_date: moment(res.start_date).format("YYYY-MM-DD"),
+                end_date: moment(res.end_date).format("YYYY-MM-DD")
+            }
+        })
 
-    res.render('edit-project', { project });
-    console.log(projects);
-}
 
-function updateproject(req, res) {
-    const projectId = parseInt(req.params.id);
-    const udpatedProject = req.body; // get data from existing form
-    const projects = JSON.parse(fs.readFileSync(mockDataPath, 'utf-8'));
-
-    // update project with same ID
-    const projectIndex = projects.findIndex(p => p.id === projectId);
-    projects[projectIndex] = {...projects[projectIndex], ...udpatedProject};
-
-    // save back to mock.json
-    fs.writeFileSync(mockDataPath, JSON.stringify(projects, null, 2));
-    res.redirect('/')
-}
-
-function deleteproject(req, res) {
-    const projectId = parseInt(req.params.id);
-    const projects = JSON.parse(fs.readFileSync(mockDataPath, 'utf-8'));
-    const projectIndex = projects.findIndex(p => p.id === projectId);
-
-    if (projectIndex !== -1) {
-        projects.splice(projectIndex, 1);
-        fs.writeFileSync(mockDataPath, JSON.stringify(projects, null, 2));
+        res.render('edit-project', { project: project[0] });
+    } catch (error) {
+        console.log(error);
     }
+}
 
-    res.redirect('/')
+async function updateproject(req, res) {
+    try {
+        const { id } = req.params
+        const { title, start_date, end_date, description, node_js, react_js, next_js, typescript } = req.body
+        const image = "image.jpg" // image name saved on server
+        const nodejs = node_js? true:false;
+        const reactjs = react_js? true:false;
+        const nextjs = next_js? true:false;
+        const tscript = typescript? true:false;
+        
+        await sequelize.query(`UPDATE tb_projects
+            SET
+                title = '${title}',
+                start_date = '${start_date}',
+                end_date = '${end_date}',
+                description = '${description}',
+                node_js = '${nodejs}',
+                react_js = '${reactjs}',
+                next_js = '${nextjs}',
+                typescript = '${tscript}',
+                image = '${image}',
+                "updatedAt" = NOW()
+            WHERE
+                id = ${id}
+                `)
+
+        res.redirect('/')
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+async function deleteproject(req, res) {
+    try {
+        const { id } = req.params
+
+        const data = await sequelize.query(`DELETE FROM tb_projects WHERE id=${id}`);
+        res.redirect('/')
+    } catch (error){
+        console.log(error);
+    }
 }
 
 // generate unique ID

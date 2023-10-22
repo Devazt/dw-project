@@ -18,15 +18,17 @@ module.exports = (sequelize, DataTypes) => {
     start_date: DataTypes.DATE,
     end_date: DataTypes.DATE,
     description: DataTypes.STRING,
-    technologies: DataTypes.ARRAY(DataTypes.STRING),
-    image: DataTypes.STRING,
-    author: DataTypes.INTEGER
+    node_js: DataTypes.BOOLEAN,
+    react_js: DataTypes.BOOLEAN,
+    next_js: DataTypes.BOOLEAN,
+    typescript: DataTypes.BOOLEAN,
+    image: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'tb_projects',
     timestamps: true,
     createdAt: true,
-    updatedAt: 'updateTimestamp'
+    updatedAt: true
   });
   return tb_projects;
 };

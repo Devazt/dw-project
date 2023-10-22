@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'User',
     timestamps: true,
     createdAt: true,
-    updatedAt: 'updateTimestamp'
+    updatedAt: true
   });
   return User;
 };

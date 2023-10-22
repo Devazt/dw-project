@@ -25,16 +25,21 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
-      technologies: {
-        allowNull: false,
-        type: Sequelize.ARRAY(Sequelize.STRING)
+      node_js: {
+        type: Sequelize.BOOLEAN
+      },
+      react_js: {
+        type: Sequelize.BOOLEAN
+      },
+      next_js: {
+        type: Sequelize.BOOLEAN
+      },
+      typescript: {
+        type: Sequelize.BOOLEAN
       },
       image: {
         allowNull: false,
         type: Sequelize.STRING
-      },
-      author: {
-        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
