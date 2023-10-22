@@ -5,6 +5,11 @@ const app = express();
 const port = 5000;
 const mockDataPath = path.join(__dirname,'./src/mocks/blogs.json');
 
+// Sequelize config
+const config = require('./src/config/config.json')
+const { Sequelize, QueryTypes } = require("sequelize")
+const sequelize = new Sequelize(config.development)
+
 // setup to call hbs
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'src/views'));
@@ -27,6 +32,7 @@ const imageDirectory = 'src/public/images'; // directory images
 
 // middleware for images
 const multer = require('multer');
+const { error } = require('console');
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, imageDirectory); // change directory
@@ -55,15 +61,32 @@ app.get('/project/:id/delete', deleteproject)
 app.get('/contact', contact)
 
 // render route 
-function home(req, res) {
-    const projects = JSON.parse(fs.readFileSync(mockDataPath, 'utf-8'));
-    projects.forEach(project => {
-        const duration = calculateDuration(project.start_date, project.end_date);
-        project.duration = duration;
-        project.imagePath = path.join('/', imageDirectory, project.image);
-      });
+async function home(req, res) {
+    try {
+        const query = `SELECT id, title, start_date, end_date, technologies, description, image, "createdAt" FROM tb_projects`
+        let obj = await sequelize.query(query, { type: QueryTypes.SELECT });
 
-    res.render('index', { projects });
+        const projects = obj.map((res) => ({
+            ...res,
+            author: "Nandy Septiana"
+        }))
+        projects.forEach(project => {
+                const duration = calculateDuration(project.start_date, project.end_date);
+                project.duration = duration;
+              });
+
+        res.render('index', { projects });
+    } catch (error) {
+        console.log(error);
+
+    }
+    // const projects = JSON.parse(fs.readFileSync(mockDataPath, 'utf-8'));
+    // projects.forEach(project => {
+    //     const duration = calculateDuration(project.start_date, project.end_date);
+    //     project.duration = duration;
+    //     project.imagePath = path.join('/', imageDirectory, project.image);
+    //   });
+
 }
 
 function addproject(req, res) {

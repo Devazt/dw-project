@@ -132,7 +132,7 @@
                 <div class="max-w-sm m-4 p-4 rounded-lg border border-solid border-black shadow-lg shadow-black" id="project-item">
                     <div>
                       <a href="/project-details/{{this.id}}">
-                        <img class="rounded-lg " style="width: 350px; height: 250px; object-fit: cover;" src="{{this.imagePath}}" alt="{{this.title}}">
+                        <img class="rounded-lg " style="width: 350px; height: 250px; object-fit: cover;" src="{{this.image}}" alt="{{this.title}}">
                     </div>                    
                     <p class="font-bold text-center py-2">{{this.title}}</p>
                     </a>
@@ -144,6 +144,9 @@
                       {{#if this.duration.hours}} {{this.duration.hours}} hours, {{/if}}
                       {{#if this.duration.minutes}} {{this.duration.minutes}} mins, {{/if}}
                       {{#if this.duration.seconds}} {{this.duration.seconds}} seconds {{/if}}
+                    </p>
+                    <p class="text-sm text-gray-600 text-center pb-2">
+                      {{this.createdAt}}
                     </p>
     
                     <div class="h-40">
@@ -175,11 +178,6 @@
                             Delete
                         </button>
                         </a>
-                    </div>
-                    <div>
-                      <p class="text-right m-2">
-                        1 minute ago
-                      </p>
                     </div>
                 </div>
             </div>
