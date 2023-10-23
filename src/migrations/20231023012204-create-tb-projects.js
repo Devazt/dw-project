@@ -21,6 +21,13 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       },
+      author: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'users',
+          key : 'id'
+        }
+      },
       description: {
         allowNull: false,
         type: Sequelize.STRING
