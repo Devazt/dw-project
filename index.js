@@ -98,7 +98,7 @@ async function home(req, res) {
     res.render('index', {
         projects: project,
         isLogin: req.session.isLogin,
-        user: req.session.user,
+        user: req.session.user
         })
     } catch (error) {
         console.log(error);
@@ -175,7 +175,8 @@ async function updateproject(req, res) {
     try {
         const { id } = req.params
         const { title, start_date, end_date, description, node_js, react_js, next_js, typescript, } = req.body;
-        const image = req.file.filename;
+        let image = req.body 
+        image = req.file.filename;
         const nodejs = node_js? true:false;
         const reactjs = react_js? true:false;
         const nextjs = next_js? true:false;
@@ -195,8 +196,7 @@ async function updateproject(req, res) {
                 "updatedAt" = NOW()
             WHERE
                 id = ${id}
-                `)
-                console.log(image);
+                `);
 
         res.redirect('/')
     } catch (error) {

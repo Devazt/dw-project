@@ -75,7 +75,7 @@
               <div class="space-y-1 px-2 pb-3 pt-2">
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                 <a href="/" class="bg-blue-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Home</a>
-                {{#if isLogin}}
+                {{#if idUser}}
                 <a href="/add-project" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Add Project</a>
                 <a href="/testimonial" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Testimonials</a>
                 {{/if}}
